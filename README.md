@@ -7,7 +7,7 @@
   - เป็น ChromeExtension
   - Get Keyword from Shutterstock
   - Copy to Clipboard
-  - 
+
 # How to Install
 - Download File
 - Open Chrome Browser
