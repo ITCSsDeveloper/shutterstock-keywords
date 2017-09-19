@@ -1,17 +1,22 @@
 <html>
+
 <head>
   <title>SHUTTERSTOCK-KEYWORDS</title>
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
+  <div style="width: 350px;">
     <h3>SHUTTERSTOCK-KEYWORDS Ext. <small>1.0</small></h3>
     <small><a href="https://github.com/ITCSsDevloper/shutterstock-keywords">ITCS's Developer</a></small>
     <hr>
-
-    <button id="btnGetKeyWord" class="btn-success">GET KEYWORD</button>
-
-    <textarea id="txtResult" cols="30" rows="10"></textarea>
-
-    <script src="main.js"></script>
+    <textarea id="txtResult" cols="45" rows="10" readonly></textarea>
+    <div>
+      <button id="btnGetKeyWord" class="btn-success">GET KEYWORD</button>
+      <button id="btnCopy" class="btn-info">Copy to Clipboard</button>
+    </div>
+  </div>
+  <script src="script.js"></script>
 </body>
+
 </html>
