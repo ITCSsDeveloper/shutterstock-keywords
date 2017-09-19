@@ -3,57 +3,42 @@
 
 // When the popup HTML has loaded
 window.addEventListener('load', function (evt) {
-
-
     // Get Keyword
     document.getElementById('btnGetKeyWord').onclick = function () {
         chrome.tabs.getSelected(null, function (tab) {
             chrome.tabs.sendRequest(tab.id, { method: "getText" }, function (response) {
-                if (response.method == "getText") {
-                    document.getElementById('txtResult').innerHTML = response.data;
+                
+                if (response === undefined) {
+                    alert('Please Goto www.shutterstock.com');
+                    return;
                 }
-                else {
-                    document.getElementById('txtResult').innerHTML = 'Not found tags.';
+
+                if (response.method !== "getText") {
+                    alert('Not found method.');
+                    return;
                 }
+
+                if (response.data == '');
+                {
+                    alert('Not found tag.');
+                    return;
+                }
+
+                document.getElementById('txtResult').innerHTML = response.data;
             });
         });
     };
 
     // Copy 
-    document.getElementById('btnCopy').onclick = function () { 
+    document.getElementById('btnCopy').onclick = function () {
         document.getElementById('txtResult').select();
         document.execCommand('copy');
         alert('Copied !!');
     };
 
-
-     // a link to Github
-     document.getElementById('aLinkGithub').onclick = function () { 
+    // a link to Github
+    document.getElementById('aLinkGithub').onclick = function () {
         var newURL = "https://github.com/ITCSsDevloper/shutterstock-keywords";
         chrome.tabs.create({ url: newURL });
     };
 });
-
-
-// Unuse code.
-// function GetKeyWord() {
-//     chrome.tabs.query({ 'active': true, 'windowId': chrome.windows.WINDOW_ID_CURRENT },
-//         function (tabs) {
-//             var xx = tabs[0].url;
-//             if (xx.indexOf("www.shutterstock.com") !== -1) {
-//                 var tempTags = '';
-//                 var x = document.getElementsByClassName("btn-search-pill");
-//                 var i;
-//                 for (i = 0; i < x.length; i++) {
-//                     tempTags = tempTags + x[i].innerHTML + ', ';
-//                 }
-//                 alert(x.length);
-//                 document.getElementById('txtResult').innerHTML = tempTags;
-//             }
-//             else {
-//                document.getElementById('txtResult').innerHTML = 'Please Goto www.shutterstock.com';
-//             }
-//         }
-//     );
-// }
-
