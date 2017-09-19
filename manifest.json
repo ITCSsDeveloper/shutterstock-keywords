@@ -1,0 +1,15 @@
+{
+    "manifest_version": 2,
+  
+    "name": "SHUTTERSTOCK-KEYWORDS",
+    "description": "Detect tag in shutterstock.com",
+    "version": "1.0",
+  
+    "browser_action": {
+     "default_icon": "icon.png",
+     "default_popup": "popup.html"
+    },
+    "permissions": [
+     "activeTab"
+     ]
+  }
