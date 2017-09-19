@@ -9,7 +9,7 @@ chrome.extension.onRequest.addListener(
             }
             tempTags = tempTags.substring(0, tempTags.length - 2);
 
-            sendResponse({ data: tempTags, method: "getText" }); //same as innerText
+            sendResponse({ data: tempTags, count: x.length, method: "getText" }); //same as innerText
         }
     }
 );

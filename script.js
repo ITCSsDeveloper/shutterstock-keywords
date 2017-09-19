@@ -7,14 +7,16 @@ window.addEventListener('load', function (evt) {
     document.getElementById('btnGetKeyWord').onclick = function () {
         chrome.tabs.getSelected(null, function (tab) {
             chrome.tabs.sendRequest(tab.id, { method: "getText" }, function (response) {
-                
-                if (response == undefined || response.method !== "getText" || response.data == ''  )
-                {
-                    alert('Not found tag.');
+
+                if (response == undefined || response.method !== "getText" || response.data == '') {
+                    document.getElementById('lblFeedback').innerHTML = 'Not found tag.';
+                    document.getElementById('lblFeedback').style.color = "red";
                     return;
                 }
 
                 document.getElementById('txtResult').innerHTML = response.data;
+                document.getElementById('lblFeedback').innerHTML = 'Found '+ response.count +' tags.';
+                document.getElementById('lblFeedback').style.color = "green";
             });
         });
     };
@@ -23,7 +25,11 @@ window.addEventListener('load', function (evt) {
     document.getElementById('btnCopy').onclick = function () {
         document.getElementById('txtResult').select();
         document.execCommand('copy');
-        alert('Copied !!');
+
+        if (document.getElementById('lblFeedback').innerHTML.indexOf('Copied') == -1) {
+            document.getElementById('lblFeedback').innerHTML += ' Copied!!';
+            document.getElementById('lblFeedback').style.color = "green";
+        }
     };
 
     // a link to Github
