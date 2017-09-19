@@ -24,3 +24,4 @@
 - Wait to process
 - Click "Copy to clipboard"
 
+![Demo UI](https://user-images.githubusercontent.com/24679901/30606631-81e1d3d2-9d9c-11e7-9beb-01176f604f5e.png)
