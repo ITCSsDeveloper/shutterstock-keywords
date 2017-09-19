@@ -25,6 +25,13 @@ window.addEventListener('load', function (evt) {
         document.execCommand('copy');
         alert('Copied !!');
     };
+
+
+     // a link to Github
+     document.getElementById('aLinkGithub').onclick = function () { 
+        var newURL = "https://github.com/ITCSsDevloper/shutterstock-keywords";
+        chrome.tabs.create({ url: newURL });
+    };
 });
 
 
