@@ -8,17 +8,7 @@ window.addEventListener('load', function (evt) {
         chrome.tabs.getSelected(null, function (tab) {
             chrome.tabs.sendRequest(tab.id, { method: "getText" }, function (response) {
                 
-                if (response === undefined) {
-                    alert('Please Goto www.shutterstock.com');
-                    return;
-                }
-
-                if (response.method !== "getText") {
-                    alert('Not found method.');
-                    return;
-                }
-
-                if (response.data == '');
+                if (response == undefined || response.method !== "getText" || response.data == ''  )
                 {
                     alert('Not found tag.');
                     return;
