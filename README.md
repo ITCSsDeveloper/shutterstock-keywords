@@ -24,8 +24,7 @@
 - Wait to process
 - Click "Copy to clipboard"
 
-
-
+# Screen shots
 ![V.1.2 Update CSS UI](https://user-images.githubusercontent.com/24679901/30812370-c30f250c-a234-11e7-910d-47cc68a203aa.png)
 
 ![V.1.2 Resize KeywordContainer](https://user-images.githubusercontent.com/24679901/30812252-7d670556-a234-11e7-9d08-0e61b9995170.png)
