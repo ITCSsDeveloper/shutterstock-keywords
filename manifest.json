@@ -18,7 +18,7 @@
     },
     "content_scripts": [
         {
-          "matches": ["https://www.shutterstock.com/*"],
+          "matches": ["https://www.shutterstock.com/*", "https://submit.shutterstock.com/*"],
           "js": [ "contentscript.js"]
         }
       ]
