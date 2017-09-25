@@ -3,14 +3,15 @@
 <head>
   <title>SHUTTERSTOCK-KEYWORDS</title>
   <link rel="stylesheet" href="style.css">
+  <!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
 </head>
 
 <body>
   <div style="width: 350px;">
-    <h4>SHUTTERSTOCK KEYWORDS 1.1&nbsp; <small><a href="" id="aLinkGithub">by ITCS's Developer</a></small></h4>
+    <h4>SHUTTERSTOCK KEYWORDS 1.2&nbsp; <small><a href="" id="aLinkGithub">by ITCS's Developer</a></small></h4>
     <hr>
-    <p id="lblFeedback" style="font-weight: bold;"></p>
-    <textarea id="txtResult" cols="45" rows="10" readonly>
+    <div id="lblFeedback"></div>
+    <textarea id="txtResult" class="form-control" cols="45" rows="10" readonly>
 How to Use
 - Goto "www.shutterstock.com"
 - Select target photo
@@ -21,8 +22,9 @@ How to Use
     </textarea>
     <hr>
     <div>
-      <button id="btnGetKeyWord" class="btn-success">GET KEYWORD</button>
-      <button id="btnCopy" class="btn-info">Copy to Clipboard</button>
+      <button id="btnGetKeyWord" class="btn btn-success">GET KEYWORD</button>
+      <button id="btnCopy" class="btn btn-info">Copy to Clipboard</button>
+      <button id="btnResize" class="btn btn-warning">Resize</button>
     </div>
   </div>
   <script src="script.js"></script>
