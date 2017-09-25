@@ -1,8 +1,5 @@
 # ChromeExtension shutterstock-keywords
 
-> ทำตั้งแต่ 22:00 - 12:00
-> ถือ เป็นแบบฝึกหัดการทำ ChromeExtension ทีดี
-
 # Features!
   - เป็น ChromeExtension
   - Get Keyword from Shutterstock
