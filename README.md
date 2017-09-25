@@ -1,9 +1,12 @@
 # ChromeExtension shutterstock-keywords
 
 # Features!
-  - เป็น ChromeExtension
+  - Run on ChromeExtension
   - Get Keyword from Shutterstock
   - Copy to Clipboard
+  - Resize Keywords Container to height 450px  (V.1.2)
+  - Update CSS UI to Bootstrap [Only necessary Features] (V.1.2)
+  - Improve performance and UI Wording (V.1.2)
 
 # How to Install
 - Download File
@@ -21,4 +24,8 @@
 - Wait to process
 - Click "Copy to clipboard"
 
-![Demo UI](https://user-images.githubusercontent.com/24679901/30606631-81e1d3d2-9d9c-11e7-9beb-01176f604f5e.png)
+
+
+![V.1.2 Update CSS UI](https://user-images.githubusercontent.com/24679901/30812370-c30f250c-a234-11e7-910d-47cc68a203aa.png)
+
+![V.1.2 Resize KeywordContainer](https://user-images.githubusercontent.com/24679901/30812252-7d670556-a234-11e7-9d08-0e61b9995170.png)
