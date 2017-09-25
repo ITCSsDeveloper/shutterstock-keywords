@@ -1,4 +1,4 @@
-/*  Inspiration from ฺBootstrap */
+/*  Inspiration from Bootstrap */
 .btn-success {
     color: #fff;
     background-color: #5cb85c;
@@ -13,4 +13,7 @@
     color: #fff;
     background-color: #5bc0de;
     border-color: #46b8da;
+}
+textarea {
+    resize: none;
 }

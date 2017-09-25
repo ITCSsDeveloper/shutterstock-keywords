@@ -3,33 +3,45 @@
 
 // When the popup HTML has loaded
 window.addEventListener('load', function (evt) {
+    var lblFeedback = document.getElementById('lblFeedback');
+    var txtResult = document.getElementById('txtResult');
+    var btnCopy = document.getElementById('btnCopy');
+    var btnSave = document.getElementById('btnSave');
+    var tableFav = document.getElementById('tableFav');
+
     // Get Keyword
     document.getElementById('btnGetKeyWord').onclick = function () {
         chrome.tabs.getSelected(null, function (tab) {
-            chrome.tabs.sendRequest(tab.id, { method: "getText" }, function (response) {
+            chrome.tabs.sendRequest(tab.id, { method: "getTag" }, function (response) {
 
-                if (response == undefined || response.method !== "getText" || response.data == '') {
-                    document.getElementById('lblFeedback').innerHTML = 'Not found tag.';
-                    document.getElementById('lblFeedback').style.color = "red";
+                if (response == undefined || response.method !== "getTag" || response.data == '') {
+                    lblFeedback.innerHTML = 'Not found tag.';
+                    lblFeedback.style.color = "red";
                     return;
                 }
 
-                document.getElementById('txtResult').innerHTML = response.data;
-                document.getElementById('lblFeedback').innerHTML = 'Found '+ response.count +' tags.';
-                document.getElementById('lblFeedback').style.color = "green";
+                txtResult.innerHTML = response.data;
+                lblFeedback.innerHTML = 'Found ' + response.count + ' tags.';
+                lblFeedback.style.color = "green";
             });
         });
     };
 
-    // Copy 
-    document.getElementById('btnCopy').onclick = function () {
-        document.getElementById('txtResult').select();
-        document.execCommand('copy');
-
-        if (document.getElementById('lblFeedback').innerHTML.indexOf('Copied') == -1) {
-            document.getElementById('lblFeedback').innerHTML += ' Copied!!';
-            document.getElementById('lblFeedback').style.color = "green";
+    // Function Copy
+    btnCopy.onclick = function () {
+        if (txtResult.innerHTML.indexOf('How to Use') !== -1) {
+            lblFeedback.innerHTML = 'Not found tag.';
+            lblFeedback.style.color = "red";
+            return;
         }
+
+        if (lblFeedback.innerHTML.indexOf('Copied') == -1 && lblFeedback.innerHTML.indexOf('Not found tag.') === -1) {
+            lblFeedback.innerHTML += ' Copied!!';
+            lblFeedback.style.color = "green";
+        }
+
+        txtResult.select();
+        document.execCommand('copy');
     };
 
     // a link to Github

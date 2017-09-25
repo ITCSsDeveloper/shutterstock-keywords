@@ -1,6 +1,6 @@
 chrome.extension.onRequest.addListener(
     function (request, sender, sendResponse) {
-        if (request.method == "getText") {
+        if (request.method == "getTag") {
             var tempTags = '';
             var x = document.getElementsByClassName("btn-search-pill");
             var i;
@@ -9,7 +9,11 @@ chrome.extension.onRequest.addListener(
             }
             tempTags = tempTags.substring(0, tempTags.length - 2);
 
-            sendResponse({ data: tempTags, count: x.length, method: "getText" }); //same as innerText
+            sendResponse({ data: tempTags, count: x.length, method: "getTag" }); //same as innerText
+        }
+        else if (request.method == "getDesc") {
+            var desc = document.getElementsByClassName("product-desc")[0].innerHTML;
+            sendResponse({ data: desc, method: "getDesc" }); //same as innerText
         }
     }
 );
